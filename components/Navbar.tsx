@@ -3,15 +3,14 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import Image from "next/image";
 
 const navItems = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Services", href: "/services" },
-  { label: "Projects", href: "/projects" },
-  { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "/contact" },
+  { label: "About Us", href: "/about", hasSubmenu: true },
+  { label: "Business Groups", href: "/esg" },
+  { label: "Career", href: "/career" },
 ];
 
 export default function Navbar() {
@@ -21,9 +20,11 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
+      setIsScrolled(window.scrollY > 8);
     };
-    window.addEventListener("scroll", handleScroll);
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -31,12 +32,10 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`md:bg-transparent fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         showTransparent
-          ? "bg-transparent py-6 shadow-none"
-          : mobileMenu
-            ? "bg-black/90 backdrop-blur shadow-lg py-4"
-            : "bg-transparent backdrop-blur shadow-sm shadow-black/20 border-b border-white/10 py-4"
+          ? "bg-transparent"
+          : "bg-white/90 backdrop-blur-md border-b border-white/40 shadow-[0_8px_30px_rgba(15,23,42,0.12)]"
       }`}
     >
       <a
@@ -45,87 +44,126 @@ export default function Navbar() {
       >
         Skip to content
       </a>
-      <div className="container-custom flex items-center justify-between">
-        {/* Logo */}
+      <div
+        className={`container-custom flex items-center justify-between gap-4 transition-all duration-300 ${
+          isScrolled ? "py-1" : "py-1.5"
+        }`}
+      >
         <Link
           href="/"
-          className={`text-xl sm:text-2xl font-bold tracking-tight transition-colors text-white`}
+          className="flex items-center gap-3"
           aria-label="Duta Energi Muliatama"
         >
-          DUTA ENERGI
+          <Image
+            src="/dutaenergilogo.png"
+            alt="Duta Energi Muliatama"
+            width={isScrolled ? 45 : 54}
+            height={isScrolled ? 14 : 17}
+            className="object-contain transition-all duration-300"
+            priority
+          />
+          <p
+            className={`drop-shadow-2xl drop-shadow-sky-700 ${
+              isScrolled
+                ? "text-sky-700 font-semibold"
+                : "text-white  font-semibold"
+            } `}
+          >
+            Duta Energi Muliatama
+          </p>
         </Link>
 
-        {/* Desktop Menu */}
-        <nav className="hidden md:flex items-center gap-8" aria-label="Primary">
-          {navItems.map((item) => {
-            const isActive = pathname === item.href;
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`text-sm font-medium transition-colors ${
-                  isActive ? "text-sky-300" : "text-white/85 hover:text-white"
-                }`}
-              >
-                {item.label}
-              </Link>
-            );
-          })}
+        <nav className="hidden md:block" aria-label="Primary">
+          <ul className="flex items-center gap-4 lg:gap-6">
+            {navItems.map((item) => {
+              const isActive = pathname === item.href;
+              return (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className={`text-sm font-medium transition-colors ${
+                      showTransparent
+                        ? isActive
+                          ? "text-white"
+                          : "text-white/80 hover:text-white"
+                        : isActive
+                          ? "text-sky-700"
+                          : "text-slate-700 hover:text-sky-700"
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
         </nav>
 
-        {/* Desktop Button */}
-        <div className="hidden md:block">
+        <div className="flex items-center gap-2">
           <Link
             href="/contact"
-            className="btn bg-white text-slate-900 hover:bg-white/90"
+            className={`hidden md:inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-semibold transition ${
+              showTransparent
+                ? "bg-white/95 text-sky-700 hover:bg-sky-700 hover:text-white"
+                : "bg-sky-600 text-white hover:bg-white hover:text-sky-700"
+            }`}
           >
-            Get In Touch
+            Contact Me
           </Link>
+          <button
+            type="button"
+            onClick={() => setMobileMenu(!mobileMenu)}
+            className={`p-2 rounded-md border transition-colors md:hidden ${
+              showTransparent
+                ? "border-white/30 text-white hover:text-white/80"
+                : "border-slate-300 text-slate-700 hover:text-slate-900"
+            }`}
+            aria-expanded={mobileMenu}
+            aria-controls="mobile-nav"
+            aria-label={mobileMenu ? "Close menu" : "Open menu"}
+          >
+            {mobileMenu ? <X size={22} /> : <Menu size={22} />}
+          </button>
         </div>
-
-        {/* Hamburger Button */}
-        <button
-          onClick={() => setMobileMenu(!mobileMenu)}
-          className="md:hidden p-2 rounded-lg border border-white/20 text-white transition-colors"
-          aria-expanded={mobileMenu}
-          aria-controls="mobile-nav"
-          aria-label={mobileMenu ? "Close menu" : "Open menu"}
-        >
-          {mobileMenu ? <X size={22} /> : <Menu size={22} />}
-        </button>
       </div>
 
       {/* Mobile Menu */}
       {mobileMenu && (
         <div
           id="mobile-nav"
-          className="md:hidden border-t border-white/10 bg-black/90 backdrop-blur"
+          className="md:hidden border-t border-slate-200/80 bg-white/95 backdrop-blur-md shadow-lg"
           role="dialog"
           aria-label="Mobile menu"
         >
-          <div className="container-custom py-5 flex flex-col gap-4">
-            {navItems.map((item) => {
-              const isActive = pathname === item.href;
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setMobileMenu(false)}
-                  className={`font-medium transition ${
-                    isActive ? "text-sky-300" : "text-white hover:text-sky-300"
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              );
-            })}
-
+          <div className="container-custom py-5">
+            <nav>
+              <ul className="space-y-1">
+                {navItems.map((item) => {
+                  const isActive = pathname === item.href;
+                  return (
+                    <li key={item.href}>
+                      <Link
+                        href={item.href}
+                        onClick={() => setMobileMenu(false)}
+                        className={`block rounded-md px-2 py-2 text-base font-medium transition-colors ${
+                          isActive
+                            ? "bg-sky-50 text-sky-700"
+                            : "text-slate-900 hover:bg-slate-50 hover:text-sky-700"
+                        }`}
+                      >
+                        {item.label}
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            </nav>
             <Link
               href="/contact"
               onClick={() => setMobileMenu(false)}
-              className="btn bg-white text-slate-900 hover:bg-white/90 w-full mt-1"
+              className="mt-4 inline-flex w-full items-center justify-center rounded-lg bg-sky-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-sky-700"
             >
-              Get In Touch
+              Hubungi Kami
             </Link>
           </div>
         </div>

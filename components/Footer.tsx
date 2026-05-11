@@ -37,11 +37,14 @@ export default function Footer() {
         <div className="grid gap-14 lg:grid-cols-4">
           {/* Company */}
           <div>
-            <h2 className="text-2xl font-black tracking-tight">DUTA ENERGI</h2>
+            <h2 className="text-2xl font-bold tracking-tight">
+              DUTA ENERGI <span className="text-sky-300">MULIATAMA</span>
+            </h2>
 
             <p className="mt-6 leading-8 text-white/70">
-              Trusted partner in engineering, procurement, construction,
-              maintenance, and industrial solutions across Indonesia.
+              Alamanda Tower, 25th Floor, Jl. T.B. Simatupang Kav. 23-24 Jakarta
+              12430, Cilandak Bar., Kec. Cilandak, Kota Jakarta Selatan, Daerah
+              Khusus Ibukota Jakarta 12450
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
@@ -133,18 +136,15 @@ export default function Footer() {
                   href="mailto:hello@dutaenergi.co.id"
                   className="transition hover:text-white"
                 >
-                  hello@dutaenergi.co.id
+                  info@dutaenergi.co.id
                 </a>
               </p>
 
               <p>
                 Phone:
                 <br />
-                <a
-                  href="tel:+620000000000"
-                  className="transition hover:text-white"
-                >
-                  +62 000-0000-0000
+                <a href="+62 217548167" className="transition hover:text-white">
+                  +62 217548167
                 </a>
               </p>
 

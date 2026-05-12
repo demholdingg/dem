@@ -1,6 +1,8 @@
+import * as LucideIcons from "lucide-react";
 export type Service = {
   slug: string;
   title: string;
+  icon: keyof typeof LucideIcons;
   description: string;
 };
 

@@ -4,7 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { CheckCircle2, ArrowLeft, Mail, MessageSquare } from "lucide-react";
 
-export async function generateMetadata({ params }) {
+type Props = {
+  params: Promise<{ slug: string }>;
+};
+export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
   const service = services.find((s) => s.slug === slug);
 
@@ -16,7 +19,7 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default async function ServiceDetailPage({ params }) {
+export default async function ServiceDetailPage({ params }: Props) {
   const { slug } = await params;
   const service = services.find((s) => s.slug === slug);
 

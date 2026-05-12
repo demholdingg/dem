@@ -3,6 +3,8 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import PageTransition from "@/components/PageTransition";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
   title: "Duta Energi Muliatama",
@@ -19,8 +21,11 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Navbar />
+        <ScrollReveal />
         <div className="pt-0">
-          <main id="main">{children}</main>
+          <main id="main">
+            <PageTransition>{children}</PageTransition>
+          </main>
           <Footer />
         </div>
         <WhatsAppButton />

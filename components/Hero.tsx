@@ -18,7 +18,7 @@ export default function Hero() {
       <div className="container-custom relative z-10 min-h-screen flex flex-col justify-center py-20 sm:py-24 lg:py-28">
         <div className="max-w-4xl text-white mx-auto w-full text-center">
           <h1 className="mt-6 text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl drop-shadow-3xl">
-            Mechanical Engineering Solution and Contracting{" "}
+            Mechanical Engineering Solution and{" "}
             <span className="text-sky-400">Contracting Services</span>
           </h1>
 
@@ -28,7 +28,7 @@ export default function Hero() {
           </p>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center justify-center">
-            <Link href="/services" className="btn btn-primary">
+            <Link href="/about" className="btn btn-primary">
               About Us
             </Link>
             <Link href="/projects" className="btn btn-outline">

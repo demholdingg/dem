@@ -9,8 +9,9 @@ import Image from "next/image";
 const navItems = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about", hasSubmenu: true },
-  { label: "Business Groups", href: "/esg" },
-  { label: "Career", href: "/career" },
+  { label: "Projects", href: "/projects" },
+  { label: "Services", href: "/services" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
@@ -84,10 +85,10 @@ export default function Navbar() {
                     className={`text-sm font-medium transition-colors ${
                       showTransparent
                         ? isActive
-                          ? "text-white"
-                          : "text-white/80 hover:text-white"
+                          ? "text-white underline-offset-4 underline decoration-sky-400"
+                          : "text-white/80 hover:text-white hover:bg-sky-700 "
                         : isActive
-                          ? "text-sky-700"
+                          ? "text-sky-700 underline-offset-4 underline decoration-sky-400"
                           : "text-slate-700 hover:text-sky-700"
                     }`}
                   >

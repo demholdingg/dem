@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 export const metadata: Metadata = {
   title: "Duta Energi Muliatama",
@@ -22,6 +23,7 @@ export default function RootLayout({
           <main id="main">{children}</main>
           <Footer />
         </div>
+        <WhatsAppButton />
       </body>
     </html>
   );

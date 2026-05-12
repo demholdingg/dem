@@ -1,27 +1,36 @@
-export interface Project {
-  title: string;
+export type Project = {
   slug: string;
-  image: string;
+  title: string;
   location: string;
-}
+  image: string;
+  description: string;
+};
 
 export const projects: Project[] = [
   {
-    title: "Pipeline Installation Project",
-    slug: "pipeline-installation",
-    image: "/globe.svg",
-    location: "East Kalimantan",
+    slug: "pln-electrical-procurement",
+    title: "Electrical Utility Procurement",
+    location: "PT PLN (Persero) • Indonesia",
+    image: "/images/projects/project-pln.jpg",
+    description:
+      "Procurement of utility and electrical equipment including testing instruments, mobile units, communication systems, thermovision devices, smart distribution components, and ultrasonic detectors for PT PLN (Persero) and regional entities.",
   },
+
   {
-    title: "Boiler Maintenance & Overhaul",
-    slug: "boiler-maintenance",
-    image: "/window.svg",
-    location: "Java",
+    slug: "smart-distribution-system",
+    title: "Smart Distribution Components",
+    location: "Power Distribution Sector",
+    image: "/images/projects/project-smart-grid.jpg",
+    description:
+      "Supply and deployment of smart electrical distribution components to improve reliability, operational monitoring, and system efficiency.",
   },
+
   {
-    title: "Mechanical Construction",
-    slug: "mechanical-construction",
-    image: "/file.svg",
-    location: "Sumatra",
+    slug: "thermovision-maintenance",
+    title: "Thermovision Inspection System",
+    location: "Industrial Maintenance",
+    image: "/images/projects/project-thermal.jpg",
+    description:
+      "Thermovision apparatus procurement and implementation for preventive maintenance and electrical infrastructure safety monitoring.",
   },
 ];

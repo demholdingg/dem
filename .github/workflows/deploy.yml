@@ -3,7 +3,7 @@ name: Deploy ke Synology NAS
 # Jalankan script ini SETIAP KALI ada git push ke branch 'main'
 on:
   push:
-    branches: [main]
+    branches: [master]
 
 jobs:
   deploy:

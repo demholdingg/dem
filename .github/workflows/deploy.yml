@@ -9,8 +9,7 @@ env:
 
 jobs:
   deploy:
-    runs-on: [self-hosted, synology-nas-runner]
-
+    runs-on: [self-hosted]
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4

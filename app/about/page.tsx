@@ -14,6 +14,39 @@ export default function AboutPage() {
     "/images/dem3.jpg",
   ];
 
+  const subsidiaries = [
+    {
+      name: "PT. Duta Persada Power",
+      logo: "/images/dutapersadapower.png",
+      href: "/#", // Mengubah dari /contact ke /#
+    },
+    {
+      name: "PT. Teknika Pesona Kahayan",
+      logo: "/images/teknikapesonakahayan.png",
+      href: "http://192.168.2.150:3003", // Tetap ke IP address
+    },
+    {
+      name: "PT. Pelita Energi",
+      logo: "/images/pelitaenergi.png",
+      href: "http://192.168.2.150:3004", // Tetap ke IP address
+    },
+    {
+      name: "PT. Biomass Wijaya Serayu Mandiri",
+      logo: "/images/bwsm.png",
+      href: "/#", // Mengubah dari /contact ke /#
+    },
+    {
+      name: "PT. Semburan Kreasi Teknik",
+      logo: "/images/dutaenergilogo.png",
+      href: "/#", // Mengubah dari /contact ke /#
+    },
+    {
+      name: "PT Ananta Trada",
+      logo: "/images/dutaenergilogo.png", // Mengubah dari /contact ke /#
+      href: "/#",
+    },
+  ];
+
   return (
     <div className="bg-white">
       {/* HERO SECTION - Animasi Slide dengan Overlay yang Lebih Kuat */}
@@ -127,50 +160,29 @@ export default function AboutPage() {
           </div>
 
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              {
-                name: "PT. Duta Persada Power",
-                logo: "/images/dutapersadapower.png",
-              },
-              {
-                name: "PT. Teknika Pesona Kahayan",
-                logo: "/images/teknikapesonakahayan.png",
-              },
-              { name: "PT. Pelita Energi", logo: "/images/pelitaenergi.png" },
-              {
-                name: "PT. Biomass Wijaya Serayu Mandiri",
-                logo: "/images/bwsm.png",
-              },
-              {
-                name: "PT. Semburan Kreasi Teknik",
-                logo: "/images/dutaenergilogo.png",
-              },
-              { name: "PT Ananta Trada", logo: "/images/dutaenergilogo.png" },
-            ].map((company) => (
+            {subsidiaries.map((company) => (
               <div
                 key={company.name}
                 className="group p-8 bg-white rounded-2xl border border-slate-100 hover:border-sky-200 hover:shadow-2xl hover:shadow-sky-100 transition-all duration-500"
               >
-                <div className="flex h-32 w-full items-center justify-center mb-6 grayscale group-hover:grayscale-0 transition-all duration-500">
-                  <div className="relative w-40 h-20">
-                    <Image
-                      src={company.logo}
-                      alt={company.name}
-                      fill
-                      className="object-contain"
-                    />
+                <Link href={company.href} className="block">
+                  <div className="flex h-32 w-full items-center justify-center mb-6 grayscale group-hover:grayscale-0 transition-all duration-500">
+                    <div className="relative w-40 h-20">
+                      <Image
+                        src={company.logo}
+                        alt={company.name}
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
                   </div>
-                </div>
+                </Link>
                 <div className="pt-6 border-t border-slate-50">
                   <h4 className="text-lg font-bold text-slate-900 group-hover:text-sky-600 transition-colors">
-                    {company.name}
+                    <Link href={company.href} className="hover:underline">
+                      {company.name}
+                    </Link>
                   </h4>
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center gap-2 mt-4 text-xs font-bold text-slate-400 group-hover:text-sky-600 uppercase tracking-tighter transition-all"
-                  >
-                    Inquire Collaboration <ArrowRight size={14} />
-                  </Link>
                 </div>
               </div>
             ))}

@@ -9,7 +9,7 @@ env:
 
 jobs:
   deploy:
-    runs-on: self-hosted
+    runs-on: [self-hosted, synology-nas-runner]
 
     steps:
       - name: Checkout Repository

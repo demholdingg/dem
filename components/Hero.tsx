@@ -18,7 +18,7 @@ export default function Hero() {
       <div className="container-custom relative z-10 min-h-screen flex flex-col justify-center py-20 sm:py-24 lg:py-28">
         <div className="max-w-4xl text-white mx-auto w-full text-center">
           <h1 className="mt-6 text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl drop-shadow-3xl">
-            Menchanical Engineering Solution and dynamic Hello WOrld{" "}
+            Menchanical Engineering Solution and dynamic{" "}
             <span className="text-sky-400">Contracting Services</span>
           </h1>
 

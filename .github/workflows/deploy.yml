@@ -1,0 +1,23 @@
+name: Deploy ke Synology NAS
+
+# Jalankan script ini SETIAP KALI ada git push ke branch 'main'
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    # Memaksa tugas ini dijalankan oleh runner di Synology Anda, bukan server cloud GitHub
+    runs-on: self-hosted
+
+    steps:
+      # 1. Tarik kode terbaru dari GitHub ke dalam folder workspace di NAS
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # 2. Perintahkan Docker Synology untuk rebuild dan restart container NextJS
+      - name: Restart NextJS Container
+        run: |
+          cd /workspace
+          docker compose down
+          docker compose up -d --build

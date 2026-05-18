@@ -4,7 +4,6 @@ on:
   push:
     branches: [master]
 
-# Mengatasi peringatan Node.js 20 dengan memaksa penggunaan Node.js 24
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
@@ -16,9 +15,16 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      # Langkah tambahan untuk mendiagnosis jika ada masalah folder di kemudian hari
+      - name: Cek Isi Folder Proyek
+        run: |
+          echo "Lokasi direktori saat ini:"
+          pwd
+          echo "Daftar file yang ada di folder ini:"
+          ls -la
+
       - name: Restart NextJS Container
         run: |
-          cd /workspace
-          # Menambahkan '|| true' sementara untuk melihat apakah ada kendala permission
+          # Menggunakan '.' (direktori saat ini) karena GitHub otomatis berada di folder hasil checkout
           docker compose down || true
           docker compose up -d --build

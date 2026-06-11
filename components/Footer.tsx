@@ -31,21 +31,21 @@ export default function Footer() {
             </p>
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://www.linkedin.com/company/pt-duta-energi-muliatama/"
                 className="hover:text-sky-400 transition-colors"
                 aria-label="LinkedIn"
               >
                 <FaLinkedin size={20} />
               </a>
               <a
-                href="#"
+                href="https://www.facebook.com/dutaenergi/"
                 className="hover:text-sky-400 transition-colors"
                 aria-label="Facebook"
               >
                 <FaFacebook size={20} />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/dem_holding/"
                 className="hover:text-sky-400 transition-colors"
                 aria-label="Instagram"
               >

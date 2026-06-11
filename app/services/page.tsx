@@ -8,6 +8,12 @@ export const metadata = {
   title: "Services | Duta Energi",
   description:
     "High-quality engineering solutions and operational support for demanding projects.",
+  openGraph: {
+    title: "Our Services | Duta Energi",
+    description:
+      "Explore our comprehensive engineering solutions and operational support for various industries.",
+    images: ["/images/opengraph-default.jpg"], // Ganti dengan gambar OG yang relevan
+  },
 };
 
 export default function ServicesPage() {

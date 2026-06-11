@@ -1,23 +1,30 @@
 import Link from "next/link";
-import Image from "next/image"; // Import Image dari Next.js
+import Image from "next/image";
 import { services } from "@/data/services";
+import ServiceRental from "@/components/ServiceRental";
 import * as LucideIcons from "lucide-react";
+
+export const metadata = {
+  title: "Services | Duta Energi",
+  description:
+    "High-quality engineering solutions and operational support for demanding projects.",
+};
 
 export default function ServicesPage() {
   return (
     <div className="bg-slate-50">
-      {/* HERO SECTION DENGAN BACKGROUND GAMBAR */}
+      {/* HERO SECTION */}
       <section className="relative min-h-[60vh] flex items-center pt-32 pb-24 lg:pt-48 lg:pb-32 overflow-hidden">
         {/* Background Image Container */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/projects/project-hero.jpg" // Ganti dengan path gambar Anda
+            src="/images/projects/project-hero.jpg"
             alt="Engineering Services"
             fill
             priority
             className="object-cover"
           />
-          {/* Overlay: Membuat gradient gelap agar teks putih terbaca & navbar terlihat */}
+          {/* Overlay: Dark gradient for text readability */}
           <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/70 to-slate-800/40"></div>
           <div className="absolute inset-0 bg-black/20"></div>{" "}
           {/* Extra dimming */}
@@ -75,6 +82,23 @@ export default function ServicesPage() {
               );
             })}
           </div>
+        </div>
+      </section>
+
+      {/* OPERATIONAL VEHICLE RENTAL */}
+      <section className="pb-24">
+        <div className="container-custom">
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">
+              Logistics & Mobility Support
+            </h2>
+            <p className="mt-4 text-lg text-slate-600 max-w-3xl">
+              We provide reliable transportation solutions to support
+              operational efficiency and mobility for PLN technical teams across
+              various regions.
+            </p>
+          </div>
+          <ServiceRental />
         </div>
       </section>
     </div>

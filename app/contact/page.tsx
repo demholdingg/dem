@@ -60,7 +60,7 @@ export default function ContactPage() {
                         href="mailto:hello@dutaenergi.co.id"
                         className="text-lg text-slate-600 hover:text-sky-700 transition-colors"
                       >
-                        info@dutaenergi.co.id
+                        admin@dutaenergi.co.id
                       </a>
                     </div>
                   </div>
@@ -75,10 +75,10 @@ export default function ContactPage() {
                         Call Us
                       </p>
                       <a
-                        href="tel:+620000000000"
+                        href="tel:+6285693922994"
                         className="text-lg text-slate-600 hover:text-sky-700 transition-colors"
                       >
-                        +62 217548167
+                        +62 856 9392 2994
                       </a>
                     </div>
                   </div>

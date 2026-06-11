@@ -120,7 +120,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                     </a>
 
                     <a
-                      href="https://wa.me/628123456789" // Ganti dengan nomor asli
+                      href="https://wa.me/6285693922994"
                       target="_blank"
                       className="flex items-center justify-center gap-3 w-full py-4 bg-transparent border border-white/20 hover:bg-white/5 text-white font-bold rounded-xl transition-all"
                     >

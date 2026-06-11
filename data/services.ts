@@ -38,4 +38,12 @@ export const services: Service[] = [
     description:
       "Delivering technical expertise and consultation services to assist clients in selecting suitable electrical devices and industrial systems for their operational needs.",
   },
+
+  {
+    slug: "dem-logistic",
+    title: "DEM Logistic",
+    icon: "Boxes",
+    description:
+      "Providing integrated logistics and supply chain management solutions to ensure efficient distribution and handling of industrial equipment and materials.",
+  },
 ];

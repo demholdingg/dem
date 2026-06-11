@@ -11,7 +11,7 @@ export default function HomePage() {
       <About />
       <Services />
       <Projects />
-      <CTA />
+      {/* <CTA /> */}
     </>
   );
 }

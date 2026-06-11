@@ -76,9 +76,12 @@ export default function AboutPage() {
               Duta Energi <span className="text-sky-400">Muliatama</span>
             </h1>
             <p className="text-lg md:text-xl text-slate-200 leading-relaxed">
-              A premier holding company housing 5 major entities focused on
-              Energy, Industry, Technology, & Innovation. We deliver excellence
-              through certified quality and unwavering commitment.
+              Duta Energi Muliatama or DEM HOLDING was established in 2009 and
+              has grown into a holding company that houses 6 large companies
+              with various sustainable business divisions with the Latest
+              Energy, Industry, Technology, & Innovation. By upholding trust,
+              satisfaction, commitment, quality, full responsibility, &
+              certified.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <Link

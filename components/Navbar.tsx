@@ -109,7 +109,7 @@ export default function Navbar() {
                 : "bg-sky-600 text-white hover:bg-white hover:text-sky-700"
             }`}
           >
-            Contact Me
+            Contact Us
           </Link>
           <button
             type="button"
@@ -164,7 +164,7 @@ export default function Navbar() {
               onClick={() => setMobileMenu(false)}
               className="mt-4 inline-flex w-full items-center justify-center rounded-lg bg-sky-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-sky-700"
             >
-              Hubungi Kami
+              Contact Us
             </Link>
           </div>
         </div>

@@ -1,17 +1,16 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Hero() {
   return (
     <section className="relative min-h-screen overflow-hidden">
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute inset-0 h-full w-full object-cover z-0"
-      >
-        <source src="/videos/bg.hero.mp4" type="video/mp4" />
-      </video>
+      <Image
+        src="/images/hero-bg.jpeg"
+        alt="Mechanical Engineering and Contracting Services"
+        fill
+        priority
+        className="object-cover"
+      />
       <div className="absolute inset-0 bg-slate-950/80 z-0" />
       <div className="absolute inset-0 opacity-35 [background:radial-gradient(900px_circle_at_15%_10%,rgba(56,189,248,0.24),transparent_40%),radial-gradient(900px_circle_at_90%_0%,rgba(16,185,129,0.18),transparent_40%)] z-0" />
 

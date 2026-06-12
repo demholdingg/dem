@@ -5,13 +5,13 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen overflow-hidden">
       <Image
-        src="/images/hero-bg.jpeg"
+        src="/images/hero-bg.png"
         alt="Mechanical Engineering and Contracting Services"
         fill
         priority
         className="object-cover"
       />
-      <div className="absolute inset-0 bg-slate-950/80 z-0" />
+      <div className="absolute inset-0 bg-slate-800/80 z-0" />
       <div className="absolute inset-0 opacity-35 [background:radial-gradient(900px_circle_at_15%_10%,rgba(56,189,248,0.24),transparent_40%),radial-gradient(900px_circle_at_90%_0%,rgba(16,185,129,0.18),transparent_40%)] z-0" />
 
       <div className="container-custom relative z-10 min-h-screen flex flex-col justify-center py-20 sm:py-24 lg:py-28">

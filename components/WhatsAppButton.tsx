@@ -3,7 +3,7 @@
 import { MessageCircle } from "lucide-react";
 
 export default function WhatsAppButton() {
-  const phoneNumber = "6285693922994"; // Ganti dengan nomor WhatsApp perusahaan (format: 62...)
+  const phoneNumber = "6281318619708"; // Ganti dengan nomor WhatsApp perusahaan (format: 62...)
   const message =
     "Hello Duta Energi, I would like to inquire about your services.";
 

@@ -75,10 +75,10 @@ export default function ContactPage() {
                         Call Us
                       </p>
                       <a
-                        href="tel:+6285693922994"
+                        href="tel:+6281318619708"
                         className="text-lg text-slate-600 hover:text-sky-700 transition-colors"
                       >
-                        +62 856 9392 2994
+                        +62 813 1861 9708
                       </a>
                     </div>
                   </div>

@@ -5,6 +5,7 @@ import Services from "@/components/Services";
 import Projects from "@/components/Projects";
 import CTA from "@/components/CTA";
 import OurPartners from "@/components/OurPartners";
+import Iso from "@/components/Iso";
 
 export default function HomePage() {
   return (
@@ -14,6 +15,7 @@ export default function HomePage() {
       <Subsidiaries />
       <Services />
       <OurPartners />
+      <Iso />
       <Projects />
       {/* <CTA /> */}
     </>

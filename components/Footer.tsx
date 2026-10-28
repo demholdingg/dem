@@ -103,15 +103,6 @@ export default function Footer() {
                   admin@dutaenergi.co.id
                 </a>
               </li>
-              <li className="flex gap-3">
-                <Phone className="text-sky-500 shrink-0" size={18} />
-                <a
-                  href="tel:+6281318619708"
-                  className="hover:text-white transition-colors"
-                >
-                  +62 813 1861 9708
-                </a>
-              </li>
             </ul>
           </div>
 
@@ -126,6 +117,16 @@ export default function Footer() {
                 Jl. T.B. Simatupang Kav. 23-24
                 <br />
                 Jakarta Selatan 12430, Indonesia
+              </p>
+            </div>
+            <div className="flex gap-3 text-sm leading-relaxed">
+              <MapPin className="text-sky-500 shrink-0" size={18} />
+              <p>
+                Ruko Terrace Cinere JA-10.
+                <br />
+                Jl. Telaga Warna J3 RW 4 Pangkalan Jati
+                <br />
+                Cinere Kota Depok Jawa Barat 16514
               </p>
             </div>
           </div>
